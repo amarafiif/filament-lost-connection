@@ -36,10 +36,14 @@
         }
     },
     "scripts": {
-        "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes",
-        "format-dry": "vendor/bin/php-cs-fixer fix --dry-run --diff --verbose",
+        "format": "vendor/bin/pint",
+        "format-dry": "vendor/bin/pint --test",
         "analyse": "vendor/bin/phpstan analyse"
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "require-dev": {
+        "laravel/pint": "^1.24",
+        "phpstan/phpstan": "^1.10"
+    }
 }
