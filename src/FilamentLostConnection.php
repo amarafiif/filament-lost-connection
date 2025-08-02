@@ -6,23 +6,29 @@ use Filament\Contracts\Plugin;
 use Filament\Panel;
 use Filament\Support\Facades\FilamentView;
 use Filament\View\PanelsRenderHook;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\View;
 
 class FilamentLostConnection implements Plugin
 {
     protected string $position = 'bottom';
+
     protected string $lostConnectionText = 'You are disconnected.';
+
     protected string $connectedText = 'You are back online.';
+
     protected string $icon = 'heroicon-o-exclamation-triangle';
+
     protected string $lostConnectionColor = '#e11d48';
+
     protected string $connectedColor = '#059669';
+
     protected int $checkInterval = 3000;
+
     protected ?string $pingUrl = null;
 
     public static function make(): static
     {
-        return new static();
+        return new static;
     }
 
     public function getId(): string
@@ -32,13 +38,13 @@ class FilamentLostConnection implements Plugin
 
     public function register(Panel $panel): void
     {
-      //
+        //
     }
 
     public function boot(Panel $panel): void
     {
         $this->loadConfigurationDefaults();
-        
+
         FilamentView::registerRenderHook(
             PanelsRenderHook::BODY_START,
             function (): string {
@@ -54,7 +60,7 @@ class FilamentLostConnection implements Plugin
                         'pingUrl' => $this->pingUrl ?? 'https://httpbin.org/status/200',
                     ])->render();
                 } catch (\Exception $e) {
-                    //
+                    return '';
                 }
             }
         );
@@ -67,7 +73,7 @@ class FilamentLostConnection implements Plugin
                 $app = \Illuminate\Support\Facades\App::getInstance();
                 if ($app && $app->bound('config')) {
                     $config = $app->make('config');
-                    
+
                     if ($config->has('filament-lost-connection')) {
                         $this->position = $config->get('filament-lost-connection.position', $this->position);
                         $this->lostConnectionText = $config->get('filament-lost-connection.messages.lost_connection', $this->lostConnectionText);
@@ -80,7 +86,7 @@ class FilamentLostConnection implements Plugin
                     }
                 }
             } catch (\Exception $e) {
-                // 
+                //
             }
         }
     }
@@ -88,48 +94,56 @@ class FilamentLostConnection implements Plugin
     public function position(string $position): static
     {
         $this->position = $position;
+
         return $this;
     }
 
     public function lostConnectionText(string $text): static
     {
         $this->lostConnectionText = $text;
+
         return $this;
     }
 
     public function connectedText(string $text): static
     {
         $this->connectedText = $text;
+
         return $this;
     }
 
     public function icon(string $icon): static
     {
         $this->icon = $icon;
+
         return $this;
     }
 
     public function lostConnectionColor(string $color): static
     {
         $this->lostConnectionColor = $color;
+
         return $this;
     }
 
     public function connectedColor(string $color): static
     {
         $this->connectedColor = $color;
+
         return $this;
     }
 
     public function checkInterval(int $ms): static
     {
         $this->checkInterval = $ms;
+
         return $this;
     }
 
     public function pingUrl(string $url): static
     {
         $this->pingUrl = $url;
+
         return $this;
     }
 }

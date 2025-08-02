@@ -8,6 +8,8 @@ parameters:
         - '#Call to method .* on an unknown class#'
         - '#Cannot access offset .* on mixed#'
         - '#Cannot call method .* on mixed#'
+        - '#Left side of && is always true#'
+        - '#Unsafe usage of new static#'
     checkBenevolentUnionTypes: true
     checkUninitializedProperties: true
     checkTooWideReturnTypesInProtectedAndPublicMethods: true

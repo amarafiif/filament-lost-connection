@@ -12,7 +12,7 @@ class FilamentLostConnectionServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../resources/views' => resource_path('views/vendor/filament-lost-connection'),
         ], 'filament-lost-connection-views');
-        
+
         $this->publishes([
             __DIR__.'/../config/filament-lost-connection.php' => config_path('filament-lost-connection.php'),
         ], 'filament-lost-connection-config');
