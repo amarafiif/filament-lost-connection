@@ -1,0 +1,46 @@
+{
+    "name": "amarafiif/filament-lost-connection",
+    "description": "A Laravel Filament plugin that displays network connection status indicator",
+    "type": "library",
+    "license": "MIT",
+    "version": "dev-main",
+    "keywords": [
+        "laravel",
+        "filament",
+        "network",
+        "connection",
+        "indicator",
+        "plugin"
+    ],
+    "authors": [
+        {
+            "name": "Muhammad Ammar Afif",
+            "email": "amarafif230@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "illuminate/support": "^10.0|^11.0",
+        "illuminate/view": "^10.0|^11.0",
+        "filament/filament": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Amarafiif\\FilamentLostConnection\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Amarafiif\\FilamentLostConnection\\FilamentLostConnectionServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes",
+        "format-dry": "vendor/bin/php-cs-fixer fix --dry-run --diff --verbose",
+        "analyse": "vendor/bin/phpstan analyse"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

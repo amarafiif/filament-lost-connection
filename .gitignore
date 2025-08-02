@@ -1,0 +1,17 @@
+# Filament Lost Connection Plugin
+
+vendor/
+node_modules/
+.phpunit.cache/
+build/
+coverage/
+.env
+.env.local
+.env.testing
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+.vscode/
+.idea/
+composer.lock

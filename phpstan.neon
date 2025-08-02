@@ -1,0 +1,10 @@
+parameters:
+    level: 5
+    paths:
+        - src
+    checkBenevolentUnionTypes: true
+    checkUninitializedProperties: true
+    checkTooWideReturnTypesInProtectedAndPublicMethods: true
+    checkImplicitMixed: true
+    checkDynamicProperties: true
+    reportUnmatchedIgnoredErrors: true
