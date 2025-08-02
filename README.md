@@ -1,4 +1,3 @@
-### [UNRELEASED - UNDER DEV]
 # Filament Lost Connection
 
 A beautiful and customizable network connection status indicator for Laravel Filament applications. This plugin automatically detects when users lose internet connectivity and displays a non-intrusive notification.
