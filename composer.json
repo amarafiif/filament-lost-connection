@@ -3,7 +3,6 @@
     "description": "A Laravel Filament plugin that displays network connection status indicator",
     "type": "library",
     "license": "MIT",
-    "version": "dev-main",
     "keywords": [
         "laravel",
         "filament",
